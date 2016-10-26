@@ -1,0 +1,15 @@
+﻿body {
+    background-color: #eee;
+}
+
+.header {
+    background-color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 767px){
+    .header img {
+        display: none
+    }
+}

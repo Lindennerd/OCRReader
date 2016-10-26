@@ -1,0 +1,127 @@
+﻿<style type="text/css">
+    img {
+        max-width: 150px;
+        max-height: 85px;
+    }
+</style>
+
+<a class="btn btn-secondary btn-lg btn-block" data-toggle="collapse"
+    href="#documents-upload" aria-expanded="false" aria-controls="collapseExample"
+    style="margin-bottom: 1em">Upload dos documentos</a>
+
+<div class="collapse" id="documents-upload">
+    <div class="card card-block">
+
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label for="identity">CNH ou Identidade com CPF</label>
+                <input type="file" class="form-control-file" id="identity" aria-describedby="fileHelp">
+            </div>
+            <div class="col-sm-4">
+                <div class="result">
+                    <div class="text-xs-center" id="progress-identity"></div>
+                    <progress class="progress" value="0" max="1" aria-describedby="progress-identity">
+                        <div class="progress">
+                            <span class="progress-bar" style="width: 25%;"></span>
+                        </div>
+                    </progress>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" id="result-identity" style="display: none;">
+            <div class="col-sm-6">
+                <div  class="alert alert-warning" role="alert">
+                    <strong>Confiança:</strong> <span id="confidence-identity"></span> 
+                </div>
+                <label for="name">Nome</label>
+                <input type="text" value="" placeholder="Endereço de Email" class="form-control" id="name" />
+            </div>
+            <div class="col-sm-6">
+                <img class="img-thumbnail" src="" id="preview-identity">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label for="powerbill">Conta de Energia</label>
+                <input type="file" class="form-control-file" id="powerbill" aria-describedby="fileHelp">
+            </div>
+            <div class="col-sm-4">
+                <div class="result">
+                    <div class="text-xs-center" id="progress-powerbill"></div>
+                    <progress class="progress" value="0" max="1" aria-describedby="progress-powerbill">
+                        <div class="progress">
+                            <span class="progress-bar" style="width: 25%;"></span>
+                        </div>
+                    </progress>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" id="result-powerbill" style="display: none;">
+            <div class="col-sm-6">
+                <div  class="alert alert-warning" role="alert">
+                    <strong>Confiança:</strong> <span id="confidence-powerbill"></span> 
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-thumbnail" src="" id="preview-powerbill">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label for="IRPF">Imposto de Renda</label>
+                <input type="file" class="form-control-file" id="IRPF" aria-describedby="fileHelp">
+            </div>
+            <div class="col-sm-4">
+                <div class="result">
+                    <div class="text-xs-center" id="progress-IRPF"></div>
+                    <progress class="progress" value="0" max="1" aria-describedby="progress-IRPF">
+                        <div class="progress">
+                            <span class="progress-bar" style="width: 25%;"></span>
+                        </div>
+                    </progress>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" id="result-IRPF" style="display: none;">
+            <div class="col-sm-6">
+                <div  class="alert alert-warning" role="alert">
+                    <strong>Confiança:</strong> <span id="confidence-IRPF"></span> 
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-thumbnail" src="" id="preview-IRPF">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-8">
+                <label for="additional">Documentos Adicionais</label>
+                <input type="file" class="form-control-file" id="additional" aria-describedby="fileHelp">
+            </div>
+            <div class="col-sm-4">
+                <div class="result">
+                    <div class="text-xs-center" id="progress-additional"></div>
+                    <progress class="progress" value="0" max="1" aria-describedby="progress-additional">
+                        <div class="progress">
+                            <span class="progress-bar" style="width: 25%;"></span>
+                        </div>
+                    </progress>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" id="result-additional" style="display: none;">
+            <div class="col-sm-6">
+                <div  class="alert alert-warning" role="alert">
+                    <strong>Confiança:</strong> <span id="confidence-additional"></span> 
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img class="img-thumbnail" src="" id="preview-additional">
+            </div>
+        </div>
+
+    </div>
+
+</div>

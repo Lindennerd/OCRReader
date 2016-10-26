@@ -1,0 +1,50 @@
+﻿<div class="card card-block">
+    <h5 class="card-title">Contas Bancárias</h5>
+
+    <table class="table table-hover" id="accountList">
+        <tr>
+            <td>Nenhuma conta adicionada
+            </td>
+        </tr>
+    </table>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="bank">Banco</label>
+                <select class="form-control" id="bank">
+                    <option>Itau</option>
+                    <option>Caixa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="account">Conta</label>
+                <input type="text" value="" placeholder="Conta" class="form-control" id="account" />
+            </div>
+            <div class="form-group">
+                <input type="button" value="Adicionar Conta" class="btn btn-secondary" id="add-account" />
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="agency">Agência</label>
+                <input type="text" value="" placeholder="Agência" class="form-control" id="agency" />
+            </div>
+
+            <div class="form-group">
+                <label for="digit">Dígito</label>
+                <input type="text" value="" placeholder="Dígito" class="form-control" id="digit" />
+            </div>
+
+            <div class="form-group">
+                <div class="btn-group" role="group">
+                    <button class="btn btn-secondary disabled" id="edit-account" >Editar Conta</button>                    
+                    <button class="btn btn-secondary disabled" id="remove-account" >Remover Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
