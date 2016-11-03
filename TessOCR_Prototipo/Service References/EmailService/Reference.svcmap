@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9a2caf7a-4bac-4631-8688-763be3412228" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.pwoi.com.br/emailloggerv3/EmailService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EmailService1.wsdl" MetadataType="Wsdl" ID="c7082704-06c7-4b36-ba2e-3224194110d5" SourceId="1" SourceUrl="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?wsdl" />
+    <MetadataFile FileName="EmailService4.xsd" MetadataType="Schema" ID="9375c05f-e6bc-4b0f-ad21-876628a4f928" SourceId="1" SourceUrl="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?xsd=xsd3" />
+    <MetadataFile FileName="EmailService41.xsd" MetadataType="Schema" ID="8364e534-137e-4b32-b673-a2a1d2f36577" SourceId="1" SourceUrl="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?xsd=xsd2" />
+    <MetadataFile FileName="EmailService42.xsd" MetadataType="Schema" ID="b2b5e706-1958-4fb2-b1d3-195a6c637f7f" SourceId="1" SourceUrl="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EmailService43.xsd" MetadataType="Schema" ID="e1bd7b3c-73bb-4c85-b5dd-4020d367dfc7" SourceId="1" SourceUrl="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EmailService1.disco" MetadataType="Disco" ID="c62d197b-909b-4495-a342-d430aa660916" SourceId="1" SourceUrl="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

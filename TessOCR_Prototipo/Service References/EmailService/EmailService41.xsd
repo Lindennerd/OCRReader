@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EmailDtoWrapper" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EmailDtoWrapper" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://www.pwoi.com.br/emailLoggerV3/EmailService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="EmailDto">
+    <xs:sequence>
+      <xs:element name="_x003C_Attachment_x003E_k__BackingField" nillable="true" type="tns:AttachmentDto" />
+      <xs:element name="_x003C_Body_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_Cc_x003E_k__BackingField" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element name="_x003C_IsHtml_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Subject_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_To_x003E_k__BackingField" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EmailDto" nillable="true" type="tns:EmailDto" />
+  <xs:complexType name="AttachmentDto">
+    <xs:sequence>
+      <xs:element name="_content" nillable="true" type="xs:base64Binary" />
+      <xs:element name="_filename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AttachmentDto" nillable="true" type="tns:AttachmentDto" />
+</xs:schema>

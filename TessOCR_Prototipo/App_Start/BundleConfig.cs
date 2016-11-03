@@ -9,10 +9,13 @@ namespace TessOCR_Prototipo
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/Libraries/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
-            bundles.Add(new ScriptBundle("~/bundles/watch").Include("~/Scripts/watch.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/caman").Include("~/Scripts/CamanJS/caman.full.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/Libraries/bootstrap.js"));
+            bundles.Add(new ScriptBundle("~/bundles/watch").Include("~/Scripts/Libraries/watch.min.js"));
+            bundles.Add(new ScriptBundle("~/bundles/regex").Include("~/Scripts/Libraries/OCRRegexParser.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/Application").IncludeDirectory("~/Scripts/App", "*.js"));
             bundles.Add(new ScriptBundle("~/bundles/Tesseract").IncludeDirectory("~/Scripts/Tesseract", "*.js"));

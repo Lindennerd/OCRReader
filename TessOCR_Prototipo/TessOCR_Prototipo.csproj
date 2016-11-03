@@ -43,11 +43,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.10\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -192,7 +198,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Accounts.cs" />
+    <Compile Include="Models\PersonalData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\EmailService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-flex.css" />
@@ -203,6 +216,8 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\logopower.png" />
+    <Content Include="Content\Img\xp_new-min.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -259,6 +274,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\App\AccountList.js" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap-reboot.css.map" />
@@ -268,33 +284,64 @@
     <Content Include="Content\bootstrap-flex.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="Scripts\jquery-3.0.0.intellisense.js" />
+    <None Include="Properties\PublishProfiles\teste.pubxml" />
+    <Content Include="Scripts\App\FormSubmission.js" />
+    <Content Include="Scripts\CamanJS\caman.full.map" />
+    <Content Include="Scripts\CamanJS\caman.map" />
+    <None Include="Scripts\Libraries\jquery-3.0.0.intellisense.js" />
     <Content Include="Scripts\App\FinancialData.js" />
-    <Content Include="Scripts\App\UploadDocuments.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.js" />
-    <Content Include="Scripts\jquery-3.0.0.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
-    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
-    <Content Include="Scripts\jquery-3.0.0.min.map" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-2.2.0.debug.js" />
-    <Content Include="Scripts\knockout-2.2.0.js" />
-    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\App\DocumentProcessing.js" />
+    <Content Include="Scripts\CamanJS\caman.full.js" />
+    <Content Include="Scripts\CamanJS\caman.full.min.js" />
+    <Content Include="Scripts\CamanJS\caman.full.pack.js" />
+    <Content Include="Scripts\CamanJS\caman.js" />
+    <Content Include="Scripts\CamanJS\caman.min.js" />
+    <Content Include="Scripts\CamanJS\caman.pack.js" />
+    <Content Include="Scripts\Libraries\bootstrap.js" />
+    <Content Include="Scripts\Libraries\bootstrap.min.js" />
+    <Content Include="Scripts\Libraries\jquery-3.0.0.js" />
+    <Content Include="Scripts\Libraries\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\Libraries\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\Libraries\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\Libraries\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\Libraries\jquery-3.0.0.min.map" />
+    <None Include="Scripts\Libraries\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Libraries\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\Libraries\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\Libraries\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\Libraries\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\Libraries\jquery.validate.js" />
+    <Content Include="Scripts\Libraries\jquery.validate.min.js" />
+    <Content Include="Scripts\Libraries\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Libraries\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Libraries\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\Libraries\knockout-2.2.0.js" />
+    <Content Include="Scripts\Libraries\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Libraries\OCRRegexParser.js" />
     <Content Include="Scripts\Tesseract\core.js" />
     <Content Include="Scripts\Tesseract\tesseract.js" />
     <Content Include="Scripts\Tesseract\worker.js" />
-    <Content Include="Scripts\watch.min.js" />
+    <Content Include="Scripts\Libraries\watch.min.js" />
+    <None Include="Service References\EmailService\configuration91.svcinfo" />
+    <None Include="Service References\EmailService\configuration.svcinfo" />
+    <None Include="Service References\EmailService\EmailService1.wsdl" />
+    <None Include="Service References\EmailService\EmailService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\EmailService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\EmailService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\EmailService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EmailService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\EmailService\EmailService1.disco" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -303,7 +350,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Scripts\_references.js" />
+    <Content Include="Scripts\Libraries\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -345,6 +392,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\EmailService\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
